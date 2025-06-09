@@ -13,6 +13,10 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.memory import ConversationBufferMemory
 from langchain.schema.messages import HumanMessage, AIMessage
 
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 # Configure page
 st.set_page_config(
     page_title="Legal Adviser Bot",
